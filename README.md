@@ -9,6 +9,7 @@ This project was a way to learn more about cryptography and an attempt to implem
 Notes on the Project:
 
 General
+
   For all the stdin input that the user supplies, the C-d command must be called to indicate EOF.
   For the character ciphers (Caesar, Vigenere, Affine) are encoded and decoded using the ASCII values of letters, so having any numbers in your message will result in not being able to decode it correctly (it'll produce a letter when encoded).
 
