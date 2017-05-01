@@ -40,4 +40,4 @@ Future
 My original goal was to build up to the Data Encryption Standard and implement a C program modelling its function, but it turned out to be quite complicated and with my other ciphers taking up time, I couldn't get to it. The project accomplished its goal, though, by interesting me and teaching me very much about the field of cryptography.
 
 Software
-I tried to download a Cryptographically Secure Psuedo-Random Number Generatot (CSPRNG), but couldn't get it to work in my VM and went with the rand() function in the end. No external software was used.
+I tried to download a Cryptographically Secure Psuedo-Random Number Generator (CSPRNG), but couldn't get it to work in my VM and went with the rand() function in the end. No external software was used.
