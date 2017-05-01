@@ -17,23 +17,28 @@ General
   I do test for lower case and upper case at some points during my shift encryptions, which probably makes the ciphers even less secure...
   I test for bad input everywhere... except the run_crypto program. So when you type a letter or a 6 when I ask for a 0-5, the program will end. 
 
-Caesar Cipher
+Caesar Cipher:
+
   This is just your run of the mill shift cipher. We did one just like it as a homework assignment.
 
-For Vigenere Cipher
+For Vigenere Cipher:
+
   This is a variable caesar cipher depending on the characters of a key string. key string of "aa" as well as "aaaaa" will prroduce no shift, and so on.
   
-For Affine
+For Affine:
+
   Caesar cipher but the shift is computed with two integers and the character C is encoded to output O as such: O = a*C+b.
   To decode, we must find the inverse of a or the message is unrecoverable algorithmically. The constraint of this is: (a*a^-1)%26 = 1. From there: C = (a^-1)*(O-b)
   
-For Stream
+For Stream:
+
   The stream cipher is the most relevent, but I dumbed it down a lot. 
   First, I used the rand() function. This is a psuedo-random number generator that produces the exact same sequence of numbers everytime you call it a number of times... So much for random. 
   The principles hold though, because XOR operation with pseudo-random numbers (PRNs) produces a "random output" that can easily be decoded by doing the same XOR operation with the same sequence (or stream) of PRNs. The stream is the key.
   
 
-Debugging and Structure
+Debugging and Structure:
+
 I started my project by splitting up the ciphers into their own programs. I would write a main for that program in order to test each individually, and then when it worked I added the functions to my header file and added the OBJ in my Makefile. I also wrote the run_crypto program very early so I knew where I was headed and I knew how it work work in the end. My design originally called for a program that simply took you through my different ciphers and then ended, forcing you to have to run again in order to play with any ciphers. I changed that later, implementing a state machine essentially that allows you to jump around and retry ciphers to your heart's desire. I had many bugs in the input department. Trying to get good input and testing for all the bad was very time-consuming (like how to clear stdin if a letter was given and and integer was asked for. I ended up scanning the full input by looping and scanning strings. Then I would try to sscanf an integer out of that).
 
 Future
