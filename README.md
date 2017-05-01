@@ -15,6 +15,7 @@ General
   I use a character limit of 100 chars for all my input. This is non-ideal, since it is so short, but I didn't want to have to call malloc at all in order to keep it simple.
   For all input, I get rid of the spaces in between words. Either will work, but spaces won't come out at the output.
   I do test for lower case and upper case at some points during my shift encryptions, which probably makes the ciphers even less secure...
+  I test for bad input everywhere... except the run_crypto program. So when you type a letter or a 6 when I ask for a 0-5, the program will end. 
 
 Caesar Cipher
   This is just your run of the mill shift cipher. We did one just like it as a homework assignment.
@@ -30,3 +31,13 @@ For Stream
   The stream cipher is the most relevent, but I dumbed it down a lot. 
   First, I used the rand() function. This is a psuedo-random number generator that produces the exact same sequence of numbers everytime you call it a number of times... So much for random. 
   The principles hold though, because XOR operation with pseudo-random numbers (PRNs) produces a "random output" that can easily be decoded by doing the same XOR operation with the same sequence (or stream) of PRNs. The stream is the key.
+  
+
+Debugging and Structure
+I started my project by splitting up the ciphers into their own programs. I would write a main for that program in order to test each individually, and then when it worked I added the functions to my header file and added the OBJ in my Makefile. I also wrote the run_crypto program very early so I knew where I was headed and I knew how it work work in the end. My design originally called for a program that simply took you through my different ciphers and then ended, forcing you to have to run again in order to play with any ciphers. I changed that later, implementing a state machine essentially that allows you to jump around and retry ciphers to your heart's desire. I had many bugs in the input department. Trying to get good input and testing for all the bad was very time-consuming (like how to clear stdin if a letter was given and and integer was asked for. I ended up scanning the full input by looping and scanning strings. Then I would try to sscanf an integer out of that).
+
+Future
+My original goal was to build up to the Data Encryption Standard and implement a C program modelling its function, but it turned out to be quite complicated and with my other ciphers taking up time, I couldn't get to it. The project accomplished its goal, though, by interesting me and teaching me very much about the field of cryptography.
+
+Software
+I tried to download a Cryptographically Secure Psuedo-Random Number Generatot (CSPRNG), but couldn't get it to work in my VM and went with the rand() function in the end. No external software was used.
